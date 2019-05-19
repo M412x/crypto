@@ -129,9 +129,9 @@ def start(token):
                 namel = lone * " "
                 logs.write('Email: '+z['email']+'\n')
                 if v == 1:
-                    logs.write("VULNERABLE")
+                    logs.write("VULNERABLE\n")
                 else:
-                    logs.write("NOT vulnerable")
+                    logs.write("NOT vulnerable\n")
                 logs.write('Name: '+z['name']+'\n')
                 logs.write('-----------------------------------------\n\n')
                 print "\033[36m| " + wrna + z['email'] + eml + "\033[36m| " + wrne + vuln + namel +  " \033[36m| "+ z['name'] +(31-len(z['name']))*" " + "\033[36m|"
