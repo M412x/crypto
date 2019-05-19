@@ -274,8 +274,4 @@ if __name__ == '__main__':
         pass
     except:
         nama = ''
-    main()n()
-n()
-)
-in()
-in()
+    main()
