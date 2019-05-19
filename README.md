@@ -15,6 +15,6 @@ $ python2 expose.py
 Then type 'help'\
 'login' tapos 'start'
 
-Output will be saved on output/[NAME]_vuln.txt\
+Output will be saved on output/[NAME]_vuln.txt  
 To view the .txt file, exit expose.py by typing 'exit'\
 $ cat output/[NAME]_vuln.txt\
