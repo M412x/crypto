@@ -149,6 +149,10 @@ def start(token):
             print '\033[39m[\033[31m+\033[39m] Saving output to output/'+nama.split(' ')[0]+'_vuln.txt\n'
             logs.close()
             main()
+    print "\n\033[39m[\033[31m+\033[39m] Done!"
+    print '\033[39m[\033[31m+\033[39m] Saving output to output/'+nama.split(' ')[0]+'_vuln.txt\n'
+    logs.close()
+    main()
 def get(data):
     global nama
     print '\033[39m[\033[31m+\033[39m] Generating access token... '
@@ -168,17 +172,23 @@ def get(data):
         r = requests.get('https://graph.facebook.com/me?access_token='+x)
         a = json.loads(r.text)
         nama = a['name']
+        print '\033[39m[\033[31m+\033[39m] Welcome ' + nama +'!'
         main()
     except KeyError:
         print '\033[39m[\033[31m+\033[39m] Failed to generate access token'
         print '\033[39m[\033[31m+\033[39m] Check your connection / email or password'
-        os.remove('cookie/token.log')
-        print '\033[39m[\033[31m+\033[39m] Welcome ' + a['name'] +'!'
+        try:
+            os.remove('cookie/token.log')
+        except:
+            pass
         main()
     except requests.exceptions.ConnectionError:
         print '\033[39m[\033[31m+\033[39m] Failed to generate access token'
         print '\033[39m[\033[31m+\033[39m] Connection error !!!'
-        os.remove('cookie/token.log')
+        try:
+            os.remove('cookie/token.log')
+        except:
+            pass
         main()
 def login():
     global id
